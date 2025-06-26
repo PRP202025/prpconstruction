@@ -11,28 +11,85 @@
       padding: 0;
       background: #f4f4f4;
       color: #222;
+      scroll-behavior: smooth;
     }
 
     header {
-      background-color: #1a202c;
+      background: url('./banner-prp.jpg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       color: white;
-      padding: 2rem 1rem;
-      text-align: center;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    header * {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
+      font-size: 3.5rem;
       margin: 0;
+    }
+
+    header img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    section h2 {
       font-size: 2.2rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-
-    h2 {
       text-align: center;
-      margin-top: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .text-block {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      text-align: center;
+      color: #444;
+    }
+
+    .servicios {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .servicio {
+      width: 250px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .valores-lista {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+      list-style: disc;
+      padding-left: 20px;
+      color: #444;
     }
 
     .galeria {
@@ -40,124 +97,128 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .imagen {
+    .galeria .imagen {
       width: 280px;
+      background: white;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-      background: white;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
-    .imagen:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+    .galeria .imagen:hover {
+      transform: scale(1.03);
     }
 
-    .imagen img {
+    .galeria img {
       width: 100%;
-      display: block;
       height: 180px;
       object-fit: cover;
     }
 
-    .imagen p {
-      text-align: center;
-      padding: 10px;
+    .galeria p {
       margin: 0;
+      padding: 10px;
+      text-align: center;
       background: #f9f9f9;
-      font-weight: 500;
     }
 
     footer {
-      text-align: center;
-      background-color: #1a202c;
+      background: #1a202c;
       color: white;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 40px 20px;
+      text-align: center;
     }
 
     footer a {
-      color: #7A7AC9;
+      color: #a0c4ff;
       text-decoration: none;
+    }
+
+    footer p {
+      margin: 6px 0;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Bienvenido a PRP Construction, Inc.</h1>
-    <p>Estamos construyendo tu futuro hogar.</p>
+    <img src="./logo-prp.png" alt="Logo PRP" />
+    <h1>PRP Construction, Inc.</h1>
+    <p>Construyendo su visión con calidad y compromiso</p>
   </header>
 
-  <h2>Galería de Proyectos</h2>
-  <div class="galeria">
-    <div class="imagen"><img src="./galeria/20170208_101736.jpg" alt="Proyecto 1" /><p>Proyecto 1</p></div>
-    <div class="imagen"><img src="./galeria/20180626_192857.jpg" alt="Proyecto 2" /><p>Proyecto 2</p></div>
-    <div class="imagen"><img src="./galeria/20200805_132431.jpg" alt="Proyecto 3" /><p>Proyecto 3</p></div>
-    <div class="imagen"><img src="./galeria/20200904_162018.jpg" alt="Proyecto 4" /><p>Proyecto 4</p></div>
-    <div class="imagen"><img src="./galeria/20200927_125356.jpg" alt="Proyecto 5" /><p>Proyecto 5</p></div>
-    <div class="imagen"><img src="./galeria/20201103_172519.jpg" alt="Proyecto 6" /><p>Proyecto 6</p></div>
-    <div class="imagen"><img src="./galeria/20210322_182559.jpg" alt="Proyecto 7" /><p>Proyecto 7</p></div>
-    <div class="imagen"><img src="./galeria/20210515_165457.jpg" alt="Proyecto 8" /><p>Proyecto 8</p></div>
-    <div class="imagen"><img src="./galeria/20211104_140957.jpg" alt="Proyecto 9" /><p>Proyecto 9</p></div>
-    <div class="imagen"><img src="./galeria/20211116_143842.jpg" alt="Proyecto 10" /><p>Proyecto 10</p></div>
-    <div class="imagen"><img src="./galeria/20211116_155127.jpg" alt="Proyecto 11" /><p>Proyecto 11</p></div>
-    <div class="imagen"><img src="./galeria/20211229_160711.jpg" alt="Proyecto 12" /><p>Proyecto 12</p></div>
-    <div class="imagen"><img src="./galeria/20220119_165247.jpg" alt="Proyecto 13" /><p>Proyecto 13</p></div>
-    <div class="imagen"><img src="./galeria/20220219_133825.jpg" alt="Proyecto 14" /><p>Proyecto 14</p></div>
-    <div class="imagen"><img src="./galeria/20220311_102706.jpg" alt="Proyecto 15" /><p>Proyecto 15</p></div>
-    <div class="imagen"><img src="./galeria/20220502_181848.jpg" alt="Proyecto 16" /><p>Proyecto 16</p></div>
-  </div>
+  <section>
+    <h2>¿Quiénes Somos?</h2>
+    <div class="text-block">
+      Somos una empresa especializada en construcción, remodelación y concreto. Con más de 10 años de experiencia, brindamos soluciones sólidas, seguras y personalizadas, enfocados en la calidad y la satisfacción del cliente.
+    </div>
+  </section>
 
-  <h2>Misión</h2>
-  <p style="text-align:center; max-width:700px; margin:0 auto 2rem;">
-    Brindar servicios de construcción de alta calidad, especializados en concreto, estructuras y remodelaciones. Nuestro compromiso es ofrecer soluciones sólidas, seguras y eficientes que superen las expectativas de nuestros clientes.
-  </p>
+  <section style="background:#ffffff;">
+    <h2>Servicios</h2>
+    <div class="servicios">
+      <div class="servicio"><h3>Fundaciones</h3><p>Excavación, relleno y cimentación profesional.</p></div>
+      <div class="servicio"><h3>Losas y pisos</h3><p>Concreto nivelado, reforzado y acabado de calidad.</p></div>
+      <div class="servicio"><h3>Framing</h3><p>Estructuras resistentes para proyectos duraderos.</p></div>
+      <div class="servicio"><h3>Siding</h3><p>Instalación de recubrimientos exteriores modernos.</p></div>
+      <div class="servicio"><h3>Remodelaciones</h3><p>Transformación de hogares y espacios comerciales.</p></div>
+      <div class="servicio"><h3>Paredes</h3><p>Muros interiores y exteriores con acabados finos.</p></div>
+    </div>
+  </section>
 
-  <h2>Visión</h2>
-  <p style="text-align:center; max-width:700px; margin:0 auto 2rem;">
-    Ser reconocidos como una empresa líder en el sector de la construcción, destacando por nuestro profesionalismo, cumplimiento y resultados excepcionales que generan confianza y satisfacción.
-  </p>
+  <section>
+    <h2>Misión</h2>
+    <div class="text-block">
+      Brindar servicios de construcción de alta calidad con compromiso, eficiencia y seguridad, superando las expectativas de nuestros clientes.
+    </div>
+  </section>
 
-  <h2>Valores</h2>
-  <ul style="max-width:500px; margin:0 auto 2rem; list-style:circle;">
-    <li>Compromiso: Cumplimos lo que prometemos.</li>
-    <li>Calidad: Cuidamos cada detalle.</li>
-    <li>Seguridad: Protegemos a nuestro equipo y clientes.</li>
-    <li>Honestidad: Trabajamos con transparencia.</li>
-    <li>Innovación: Siempre mejorando.</li>
-    <li>Trabajo en equipo: Colaboración y respeto.</li>
-  </ul>
+  <section style="background:#ffffff;">
+    <h2>Visión</h2>
+    <div class="text-block">
+      Ser reconocidos como líderes en el sector de la construcción por nuestro profesionalismo, confianza y resultados excepcionales.
+    </div>
+  </section>
+
+  <section>
+    <h2>Valores</h2>
+    <ul class="valores-lista">
+      <li>Compromiso: Cumplimos lo que prometemos.</li>
+      <li>Calidad: Cuidamos cada detalle de cada proyecto.</li>
+      <li>Seguridad: Protegemos a nuestro equipo y a nuestros clientes.</li>
+      <li>Honestidad: Trabajamos con transparencia.</li>
+      <li>Innovación: Nos adaptamos y mejoramos constantemente.</li>
+      <li>Trabajo en equipo: Valoramos la unión y colaboración.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Galería de Proyectos</h2>
+    <div class="galeria">
+      <div class="imagen"><img src="./galeria/20170208_101736.jpg" alt="Proyecto 1" /><p>Proyecto 1</p></div>
+      <div class="imagen"><img src="./galeria/20180626_192857.jpg" alt="Proyecto 2" /><p>Proyecto 2</p></div>
+      <div class="imagen"><img src="./galeria/20200805_132431.jpg" alt="Proyecto 3" /><p>Proyecto 3</p></div>
+      <div class="imagen"><img src="./galeria/20200904_162018.jpg" alt="Proyecto 4" /><p>Proyecto 4</p></div>
+      <div class="imagen"><img src="./galeria/20200927_125356.jpg" alt="Proyecto 5" /><p>Proyecto 5</p></div>
+      <div class="imagen"><img src="./galeria/20201103_172519.jpg" alt="Proyecto 6" /><p>Proyecto 6</p></div>
+      <div class="imagen"><img src="./galeria/20210322_182559.jpg" alt="Proyecto 7" /><p>Proyecto 7</p></div>
+      <div class="imagen"><img src="./galeria/20210515_165457.jpg" alt="Proyecto 8" /><p>Proyecto 8</p></div>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 PRP Construction, Inc.</p>
-    <p>📧 prpconstructionoh@gmail.com</p>
-    <p>📍 4627 Carlynn Drive, Cincinnati, OH 45241</p>
-    <p>📞 Tel: 513-620-7030 | WhatsApp: 513-429-0401</p>
-    <p><a href="https://www.facebook.com/PRPConstructionLLC" target="_blank">🌐 Visítanos en Facebook</a></p>
+    <h2>Contáctanos</h2>
+    <p><strong>Teléfono:</strong> <a href="tel:5136207030">513-620-7030</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/15134290401" target="_blank">513-429-0401</a></p>
+    <p><strong>Dirección:</strong> 4627 Carlynn Drive, Cincinnati, OH 45241</p>
+    <p><strong>Email:</strong> <a href="mailto:prpconstructionusa@gmail.com">prpconstructionusa@gmail.com</a></p>
+    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/PRPConstructionLLC" target="_blank">/PRPConstructionLLC</a></p>
+    <p style="margin-top: 30px;">&copy; 2025 PRP Construction, Inc. | Todos los derechos reservados</p>
   </footer>
-
-  <!-- Botón flotante de WhatsApp -->
-  <a href="https://wa.me/15134290401" target="_blank" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 9999;
-  ">💬</a>
 </body>
 </html>
