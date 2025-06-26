@@ -5,21 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PRP Construction, Inc.</title>
   <meta name="google-site-verification" content="ITS86cusyQcpg1eRZMCcpqZMYVof4FOJd191t6uDJI" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f5f9;
+      color: #222;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1a202c;
+      margin-bottom: 5px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      color: #4a5568;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2d3748;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .imagen {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .imagen img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .imagen:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .imagen:hover img {
+      transform: scale(1.03);
+    }
+  </style>
 </head>
 <body>
   <h1>Bienvenido a PRP Construction, Inc.</h1>
   <p>Estamos construyendo tu futuro hogar.</p>
   <h2>Galería de Proyectos</h2>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-    <img src="/galeria/proyecto-1.jpg" width="300" />
-    <img src="/galeria/proyecto-2.jpg" width="300" />
-    <img src="/galeria/proyecto-3.jpg" width="300" />
-    <img src="/galeria/proyecto-4.jpg" width="300" />
-    <img src="/galeria/proyecto-5.jpg" width="300" />
-    <img src="/galeria/proyecto-6.jpg" width="300" />
-    <img src="/galeria/proyecto-7.jpg" width="300" />
-    <img src="/galeria/proyecto-8.jpg" width="300" />
+  <div class="galeria">
+    <div class="imagen"><img src="/galeria/proyecto-1.jpg" alt="Proyecto 1" /></div>
+    <div class="imagen"><img src="/galeria/proyecto-2.jpg" alt="Proyecto 2" /></div>
+    <div class="imagen"><img src="/galeria/proyecto-3.jpg" alt="Proyecto 3" /></div>
+    <div class="imagen"><img src="/galeria/proyecto-4.jpg" alt="Proyecto 4" /></div>
+    <div class="imagen"><img src="/galeria/proyecto-5.jpg" alt="Proyecto 5" /></div>
+    <div class="imagen"><img src="/galeria/proyecto-6.jpg" alt="Proyecto 6" /></div>
+    <div class="imagen"><img src="/galeria/proyecto-7.jpg" alt="Proyecto 7" /></div>
+    <div class="imagen"><img src="/galeria/proyecto-8.jpg" alt="Proyecto 8" /></div>
   </div>
 </body>
 </html>
