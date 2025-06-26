@@ -4,63 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PRP Construction, Inc.</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --main-color: #2F2F6F;
+      --light-bg: #f8f9fb;
+      --accent: #7A7AC9;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #f0f0f5, #e4e7ff);
+      background-color: var(--light-bg);
       color: #1a1a1a;
+      scroll-behavior: smooth;
     }
 
     header {
+      background-color: white;
+      padding: 40px 20px;
+      border-bottom: 5px solid var(--main-color);
       text-align: center;
-      padding: 3rem 1rem 2rem;
-      background: #ffffff;
-      border-bottom: 4px solid #2F2F6F;
     }
 
     header img {
-      max-width: 160px;
+      max-width: 180px;
+      margin-bottom: 1rem;
     }
 
     header h1 {
-      margin: 1rem 0 0;
-      color: #2F2F6F;
       font-size: 2.5rem;
+      margin: 0;
+      color: var(--main-color);
     }
 
     header p {
-      color: #666;
-      margin-top: 0.5rem;
+      color: #555;
+      margin-top: 10px;
+      font-size: 1.2rem;
     }
 
-    .lang-toggle {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background: #2F2F6F;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      z-index: 999;
-    }
-
-    section {
+    .section {
+      background: white;
+      margin: 30px auto;
       padding: 40px 20px;
       max-width: 1000px;
-      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
-    h2 {
+    .section h2 {
+      color: var(--main-color);
+      font-size: 2rem;
       text-align: center;
-      color: #2F2F6F;
+      margin-bottom: 20px;
     }
 
-    ul {
-      padding-left: 1.2rem;
+    .section ul {
+      padding-left: 25px;
     }
 
     .galeria {
@@ -68,7 +69,7 @@
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .galeria img {
@@ -79,16 +80,16 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .contacto p {
+    .contacto, .faq, .testimonios {
       text-align: center;
-      margin: 5px 0;
+      line-height: 1.8;
     }
 
     footer {
-      background: #2F2F6F;
+      background-color: var(--main-color);
       color: white;
+      padding: 30px 20px;
       text-align: center;
-      padding: 20px;
     }
 
     footer a {
@@ -96,152 +97,177 @@
       text-decoration: none;
     }
 
-    .whatsapp-float {
+    .whatsapp-btn {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #25d366;
+      background-color: #25d366;
       color: white;
-      padding: 12px 16px;
       border-radius: 50%;
-      font-size: 22px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      z-index: 1000;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      text-align: center;
+      line-height: 60px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 999;
       text-decoration: none;
+    }
+
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1000;
     }
   </style>
 </head>
 
 <body>
-  <button class="lang-toggle" onclick="toggleLang()">Español</button>
+  <button class="lang-switch" onclick="switchLanguage()">Español</button>
 
   <header>
-    <img src="logo-prp.png" alt="PRP Construction Logo">
+    <img src="logo-prp.png" alt="PRP Construction Logo" />
     <h1 id="title">PRP Construction, Inc.</h1>
-    <p id="subtitle">Building your vision with quality and trust</p>
+    <p id="slogan">Building your vision with quality, trust, and commitment</p>
   </header>
 
-  <section>
+  <div class="section">
     <h2 id="mission-title">Mission</h2>
-    <p id="mission-text">We provide high-quality construction services specializing in concrete, structures, and remodeling. We are committed to delivering solid, safe, and efficient solutions that exceed our clients' expectations.</p>
-  </section>
+    <p id="mission-text">
+      To provide high-quality construction services specializing in concrete, structures, and remodeling. We aim to deliver solid, safe, and efficient solutions that exceed our clients’ expectations.
+    </p>
+  </div>
 
-  <section>
+  <div class="section">
     <h2 id="vision-title">Vision</h2>
-    <p id="vision-text">To be recognized as a leading construction company, known for professionalism, commitment, and exceptional results that inspire trust and satisfaction.</p>
-  </section>
+    <p id="vision-text">
+      To be recognized as a leading company in the construction sector, known for professionalism, reliability, and outstanding results that build trust and satisfaction.
+    </p>
+  </div>
 
-  <section>
-    <h2 id="values-title">Our Values</h2>
+  <div class="section">
+    <h2 id="values-title">Values</h2>
     <ul id="values-list">
       <li><strong>Commitment:</strong> We keep our promises.</li>
-      <li><strong>Quality:</strong> We care about every detail.</li>
+      <li><strong>Quality:</strong> We pay attention to every detail.</li>
       <li><strong>Safety:</strong> We protect our team and clients.</li>
-      <li><strong>Honesty:</strong> We work transparently.</li>
-      <li><strong>Innovation:</strong> We adapt and improve constantly.</li>
-      <li><strong>Teamwork:</strong> We value unity and collaboration.</li>
+      <li><strong>Honesty:</strong> Transparency at all times.</li>
+      <li><strong>Innovation:</strong> We constantly adapt and improve.</li>
+      <li><strong>Teamwork:</strong> Unity, respect, and collaboration.</li>
     </ul>
-  </section>
+  </div>
 
-  <section>
-    <h2 id="about-title">Who We Are</h2>
-    <p id="about-text">At PRP Construction, Inc., we’re passionate about building and transforming spaces with excellence. With years of experience, we offer services such as foundations, slabs, walls, framing, siding, remodeling, and exterior work.</p>
-  </section>
+  <div class="section">
+    <h2 id="about-title">About Us</h2>
+    <p id="about-text">
+      At PRP Construction, Inc., we are passionate about building and transforming spaces. With years of experience, we offer services such as foundations, slabs, walls, framing, siding, remodeling, and exterior work.
+    </p>
+  </div>
 
-  <section>
+  <div class="section">
+    <h2 id="services-title">Our Services</h2>
+    <ul id="services-list">
+      <li>Concrete foundations</li>
+      <li>Slabs and flooring</li>
+      <li>Framing and walls</li>
+      <li>Siding installation</li>
+      <li>Exterior work</li>
+      <li>Home remodeling</li>
+    </ul>
+  </div>
+
+  <div class="section">
     <h2 id="gallery-title">Project Gallery</h2>
     <div class="galeria">
-      <img src="./galeria/20170208_101736.jpg" alt="Project 1">
-      <img src="./galeria/20180626_192857.jpg" alt="Project 2">
-      <img src="./galeria/20200805_132431.jpg" alt="Project 3">
-      <img src="./galeria/20200904_162018.jpg" alt="Project 4">
-      <img src="./galeria/20201103_172519.jpg" alt="Project 5">
-      <img src="./galeria/20210322_182559.jpg" alt="Project 6">
+      <img src="./galeria/20170208_101736.jpg" alt="Project 1" />
+      <img src="./galeria/20180626_192857.jpg" alt="Project 2" />
+      <img src="./galeria/20200805_132431.jpg" alt="Project 3" />
+      <img src="./galeria/20200904_162018.jpg" alt="Project 4" />
     </div>
-  </section>
+  </div>
 
-  <section>
+  <div class="section testimonios">
+    <h2 id="testimonials-title">What Our Clients Say</h2>
+    <p>"Excellent work, they exceeded our expectations!" - Maria G.</p>
+    <p>"Very professional and always on time." - Jorge R.</p>
+  </div>
+
+  <div class="section faq">
+    <h2 id="faq-title">FAQ</h2>
+    <p><strong>Q:</strong> Do you offer free estimates?<br><strong>A:</strong> Yes! Contact us for a no-obligation quote.</p>
+    <p><strong>Q:</strong> Do you work outside Cincinnati?<br><strong>A:</strong> Yes, we serve nearby areas too.</p>
+  </div>
+
+  <div class="section contacto">
     <h2 id="contact-title">Contact Us</h2>
-    <div class="contacto">
-      <p><strong>Phone:</strong> 513-620-7030</p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/15134290401" target="_blank">513-429-0401</a></p>
-      <p><strong>Email:</strong> <a href="mailto:prpconstruction@gmail.com">prpconstruction@gmail.com</a></p>
-      <p><strong>Address:</strong> 4627 Carlynn Drive, Cincinnati, Ohio 45241</p>
-      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/PRPConstructionLLC" target="_blank">PRP Construction LLC</a></p>
-    </div>
-  </section>
+    <p><strong>Phone:</strong> 513-620-7030</p>
+    <p><strong>WhatsApp:</strong> 513-429-0401</p>
+    <p><strong>Email:</strong> prpconstruction@gmail.com</p>
+    <p><strong>Address:</strong> 4627 Carlynn Drive, Cincinnati, Ohio 45241</p>
+    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/PRPConstructionLLC" target="_blank">PRP Construction LLC</a></p>
+  </div>
 
   <footer>
     <p>&copy; 2025 PRP Construction, Inc. All rights reserved.</p>
   </footer>
 
-  <a href="https://wa.me/15134290401" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+  <a href="https://wa.me/15134290401" class="whatsapp-btn" target="_blank">💬</a>
 
   <script>
-    let lang = 'en';
+    const translations = {
+      es: {
+        title: "PRP Construction, Inc.",
+        slogan: "Construyendo su visión con calidad, confianza y compromiso",
+        "mission-title": "Misión",
+        "mission-text": "Brindar servicios de construcción de alta calidad, especializados en concreto, estructuras y remodelaciones. Nuestro compromiso es ofrecer soluciones sólidas, seguras y eficientes que superen las expectativas de nuestros clientes.",
+        "vision-title": "Visión",
+        "vision-text": "Ser reconocidos como una empresa líder en el sector de la construcción, destacando por nuestro profesionalismo, cumplimiento y resultados excepcionales que generan confianza y satisfacción.",
+        "values-title": "Valores",
+        "values-list": `
+          <li><strong>Compromiso:</strong> Cumplimos con lo que prometemos.</li>
+          <li><strong>Calidad:</strong> Cuidamos cada detalle en nuestros trabajos.</li>
+          <li><strong>Seguridad:</strong> Protegemos a nuestro equipo y a nuestros clientes.</li>
+          <li><strong>Honestidad:</strong> Trabajamos con transparencia en todo momento.</li>
+          <li><strong>Innovación:</strong> Nos adaptamos y mejoramos constantemente.</li>
+          <li><strong>Trabajo en equipo:</strong> Valoramos la unión, el respeto y la colaboración.</li>`,
+        "about-title": "¿Quiénes Somos?",
+        "about-text": "En PRP Construction, Inc., somos un equipo apasionado por construir y transformar espacios. Contamos con años de experiencia ofreciendo servicios como cimentación, losas, paredes, framing, siding, remodelaciones y obra exterior.",
+        "services-title": "Nuestros Servicios",
+        "services-list": `
+          <li>Cimentaciones</li>
+          <li>Losas y pisos</li>
+          <li>Framing y paredes</li>
+          <li>Instalación de siding</li>
+          <li>Obra exterior</li>
+          <li>Remodelación de casas</li>`,
+        "gallery-title": "Galería de Proyectos",
+        "testimonials-title": "Testimonios de Clientes",
+        "faq-title": "Preguntas Frecuentes",
+        "contact-title": "Contáctanos",
+      }
+    };
 
-    function toggleLang() {
-      lang = lang === 'en' ? 'es' : 'en';
-      document.querySelector('.lang-toggle').textContent = lang === 'en' ? 'Español' : 'English';
-
-      const texts = {
-        en: {
-          title: "PRP Construction, Inc.",
-          subtitle: "Building your vision with quality and trust",
-          mission: "Mission",
-          missionText: "We provide high-quality construction services specializing in concrete, structures, and remodeling...",
-          vision: "Vision",
-          visionText: "To be recognized as a leading construction company...",
-          values: "Our Values",
-          valuesList: [
-            "<strong>Commitment:</strong> We keep our promises.",
-            "<strong>Quality:</strong> We care about every detail.",
-            "<strong>Safety:</strong> We protect our team and clients.",
-            "<strong>Honesty:</strong> We work transparently.",
-            "<strong>Innovation:</strong> We adapt and improve constantly.",
-            "<strong>Teamwork:</strong> We value unity and collaboration."
-          ],
-          about: "Who We Are",
-          aboutText: "At PRP Construction, Inc., we’re passionate about building...",
-          gallery: "Project Gallery",
-          contact: "Contact Us"
-        },
-        es: {
-          title: "PRP Construction, Inc.",
-          subtitle: "Construyendo su visión con calidad y confianza",
-          mission: "Misión",
-          missionText: "Brindamos servicios de construcción de alta calidad...",
-          vision: "Visión",
-          visionText: "Ser reconocidos como una empresa líder...",
-          values: "Nuestros Valores",
-          valuesList: [
-            "<strong>Compromiso:</strong> Cumplimos lo que prometemos.",
-            "<strong>Calidad:</strong> Cuidamos cada detalle.",
-            "<strong>Seguridad:</strong> Protegemos a nuestro equipo y clientes.",
-            "<strong>Honestidad:</strong> Trabajamos con transparencia.",
-            "<strong>Innovación:</strong> Mejoramos constantemente.",
-            "<strong>Trabajo en equipo:</strong> Valoramos la colaboración."
-          ],
-          about: "¿Quiénes Somos?",
-          aboutText: "En PRP Construction, Inc., somos un equipo apasionado...",
-          gallery: "Galería de Proyectos",
-          contact: "Contáctanos"
+    let currentLang = "en";
+    function switchLanguage() {
+      const lang = currentLang === "en" ? "es" : "en";
+      const t = translations[lang];
+      for (const id in t) {
+        const el = document.getElementById(id);
+        if (el) {
+          if (id.includes("list")) el.innerHTML = t[id];
+          else el.textContent = t[id];
         }
-      };
-
-      const t = texts[lang];
-      document.getElementById('title').textContent = t.title;
-      document.getElementById('subtitle').textContent = t.subtitle;
-      document.getElementById('mission-title').textContent = t.mission;
-      document.getElementById('mission-text').textContent = t.missionText;
-      document.getElementById('vision-title').textContent = t.vision;
-      document.getElementById('vision-text').textContent = t.visionText;
-      document.getElementById('values-title').textContent = t.values;
-      document.getElementById('values-list').innerHTML = t.valuesList.map(i => `<li>${i}</li>`).join("");
-      document.getElementById('about-title').textContent = t.about;
-      document.getElementById('about-text').textContent = t.aboutText;
-      document.getElementById('gallery-title').textContent = t.gallery;
-      document.getElementById('contact-title').textContent = t.contact;
+      }
+      document.querySelector(".lang-switch").textContent = lang === "en" ? "Español" : "English";
+      currentLang = lang;
     }
   </script>
 </body>
