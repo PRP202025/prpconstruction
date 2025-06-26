@@ -10,39 +10,40 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fb;
+      background: linear-gradient(to bottom right, #1A1A3D, #2F2F6F, #EDF0F9);
       color: #1a1a1a;
       scroll-behavior: smooth;
     }
 
     header {
-      background-color: #f9f9f9;
+      background-color: #f8f9fb;
       text-align: center;
-      padding: 40px 20px;
-      border-bottom: 4px solid #2F2F6F;
+      padding: 3rem 1rem;
     }
 
     header img {
-      max-width: 200px;
+      max-width: 180px;
       margin-bottom: 1rem;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #2F2F6F;
+      margin: 0;
     }
 
     header p {
-      margin-top: 10px;
       font-size: 1.2rem;
       color: #555;
     }
 
     section {
-      padding: 50px 20px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      border-radius: 10px;
     }
 
     h2 {
@@ -52,7 +53,7 @@
       margin-bottom: 20px;
     }
 
-    .valores ul {
+    .valores ul, .faq ul {
       list-style-type: disc;
       padding-left: 30px;
     }
@@ -62,7 +63,6 @@
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      margin-top: 30px;
     }
 
     .galeria img {
@@ -70,12 +70,36 @@
       height: 180px;
       object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .contacto {
+    .contacto, .testimonios, .faq, .blog, .cotizacion {
       text-align: center;
       line-height: 1.8;
+    }
+
+    .servicios ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .servicios li {
+      padding: 10px;
+      font-weight: 500;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
     }
 
     footer {
@@ -97,76 +121,103 @@
 </head>
 <body>
 
-  <header>
-    <img src="logo-prp.png" alt="PRP Construction Logo" />
-    <h1>PRP Construction, Inc.</h1>
-    <p>Construyendo su visión con calidad, confianza y compromiso</p>
-  </header> 
+<header>
+  <img src="logo-prp.png" alt="PRP Construction Logo" />
+  <h1>PRP Construction, Inc.</h1>
+  <p>Construyendo su visión con calidad, confianza y compromiso</p>
+</header>
 
-  <section>
-    <h2>Misión</h2>
-    <p>
-      Brindar servicios de construcción de alta calidad, especializados en concreto, estructuras y remodelaciones.
-      Nuestro compromiso es ofrecer soluciones sólidas, seguras y eficientes que superen las expectativas de nuestros clientes.
-    </p>
-  </section>
+<section>
+  <h2>Misión</h2>
+  <p>
+    Brindar servicios de construcción de alta calidad, especializados en concreto, estructuras y remodelaciones.
+    Nuestro compromiso es ofrecer soluciones sólidas, seguras y eficientes que superen las expectativas de nuestros clientes.
+  </p>
+</section>
 
-  <section>
-    <h2>Visión</h2>
-    <p>
-      Ser reconocidos como una empresa líder en el sector de la construcción, destacando por nuestro profesionalismo,
-      cumplimiento y resultados excepcionales que generan confianza y satisfacción.
-    </p>
-  </section>
+<section>
+  <h2>Visión</h2>
+  <p>
+    Ser reconocidos como una empresa líder en el sector de la construcción, destacando por nuestro profesionalismo,
+    cumplimiento y resultados excepcionales que generan confianza y satisfacción.
+  </p>
+</section>
 
-  <section class="valores">
-    <h2>Valores</h2>
-    <ul>
-      <li><strong>Compromiso:</strong> Cumplimos con lo que prometemos.</li>
-      <li><strong>Calidad:</strong> Cuidamos cada detalle en nuestros trabajos.</li>
-      <li><strong>Seguridad:</strong> Protegemos a nuestro equipo y a nuestros clientes.</li>
-      <li><strong>Honestidad:</strong> Trabajamos con transparencia en todo momento.</li>
-      <li><strong>Innovación:</strong> Nos adaptamos y mejoramos constantemente.</li>
-      <li><strong>Trabajo en equipo:</strong> Valoramos la unión, el respeto y la colaboración.</li>
-    </ul>
-  </section>
+<section class="valores">
+  <h2>Valores</h2>
+  <ul>
+    <li><strong>Compromiso:</strong> Cumplimos con lo que prometemos.</li>
+    <li><strong>Calidad:</strong> Cuidamos cada detalle en nuestros trabajos.</li>
+    <li><strong>Seguridad:</strong> Protegemos a nuestro equipo y clientes.</li>
+    <li><strong>Honestidad:</strong> Trabajamos con transparencia en todo momento.</li>
+    <li><strong>Innovación:</strong> Nos adaptamos y mejoramos constantemente.</li>
+    <li><strong>Trabajo en equipo:</strong> Valoramos la unión, respeto y colaboración.</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>¿Quiénes Somos?</h2>
-    <p>
-      En PRP Construction, Inc., somos un equipo apasionado por construir y transformar espacios con excelencia.
-      Contamos con años de experiencia en el sector, ofreciendo servicios como cimentación, losas, paredes, framing, siding, remodelaciones y obra exterior.
-    </p>
-  </section>
+<section class="servicios">
+  <h2>Servicios</h2>
+  <ul>
+    <li>Cimentaciones y losas</li>
+    <li>Framing y estructuras</li>
+    <li>Siding y exteriores</li>
+    <li>Remodelaciones interiores</li>
+    <li>Obra civil general</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Galería de Proyectos</h2>
-    <div class="galeria">
-      <img src="./galeria/20170208_101736.jpg" alt="Proyecto 1">
-      <img src="./galeria/20180626_192857.jpg" alt="Proyecto 2">
-      <img src="./galeria/20200805_132431.jpg" alt="Proyecto 3">
-      <img src="./galeria/20200904_162018.jpg" alt="Proyecto 4">
-      <img src="./galeria/20200927_125356.jpg" alt="Proyecto 5">
-      <img src="./galeria/20201103_172519.jpg" alt="Proyecto 6">
-      <img src="./galeria/20210322_182559.jpg" alt="Proyecto 7">
-      <img src="./galeria/20210515_165457.jpg" alt="Proyecto 8">
-    </div>
-  </section>
+<section class="galeria">
+  <h2>Galería de Proyectos</h2>
+  <img src="./galeria/20170208_101736.jpg" alt="Proyecto 1" />
+  <img src="./galeria/20180626_192857.jpg" alt="Proyecto 2" />
+  <img src="./galeria/20200805_132431.jpg" alt="Proyecto 3" />
+  <img src="./galeria/20200904_162018.jpg" alt="Proyecto 4" />
+  <img src="./galeria/20200927_125356.jpg" alt="Proyecto 5" />
+  <img src="./galeria/20201103_172519.jpg" alt="Proyecto 6" />
+  <img src="./galeria/20210322_182559.jpg" alt="Proyecto 7" />
+  <img src="./galeria/20210515_165457.jpg" alt="Proyecto 8" />
+</section>
 
-  <section>
-    <h2>Contáctanos</h2>
-    <div class="contacto">
-      <p><strong>Teléfono:</strong> 513-620-7030</p>
-      <p><strong>WhatsApp:</strong> 513-429-0401</p>
-      <p><strong>Correo:</strong> prpconstruction@gmail.com</p>
-      <p><strong>Dirección:</strong> 4627 Carlynn Drive, Cincinnati, Ohio 45241</p>
-      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/PRPConstructionLLC" target="_blank">PRP Construction LLC</a></p>
-    </div>
-  </section>
+<section class="testimonios">
+  <h2>Testimonios</h2>
+  <p>⭐️⭐️⭐️⭐️⭐️ "Excelente trabajo, cumplieron todo a tiempo y con gran calidad." - Carlos G.</p>
+  <p>⭐️⭐️⭐️⭐️⭐️ "Muy profesionales, estoy feliz con mi nueva cocina." - Laura M.</p>
+</section>
 
-  <footer>
-    <p>&copy; 2025 PRP Construction, Inc. Todos los derechos reservados.</p>
-  </footer>
+<section class="blog">
+  <h2>Consejos de Construcción</h2>
+  <p>🔨 ¿Sabías que una buena cimentación puede evitar daños futuros en tu hogar?</p>
+  <p>🏗️ Tips para remodelar sin complicaciones: planificación, materiales y permisos.</p>
+</section>
+
+<section class="faq">
+  <h2>Preguntas Frecuentes</h2>
+  <ul>
+    <li><strong>¿Ofrecen cotizaciones gratis?</strong> Sí, puedes solicitarla fácilmente en línea o por teléfono.</li>
+    <li><strong>¿Qué áreas cubren?</strong> Principalmente Cincinnati y alrededores.</li>
+    <li><strong>¿Trabajan con aseguradoras?</strong> Sí, colaboramos con seguros para trabajos residenciales.</li>
+  </ul>
+</section>
+
+<section class="cotizacion">
+  <h2>Solicita una Cotización</h2>
+  <p>Escríbenos directamente a <a href="mailto:prpconstruction@gmail.com">prpconstruction@gmail.com</a> o envíanos un mensaje por <a href="https://wa.me/15134290401" target="_blank">WhatsApp</a>.</p>
+</section>
+
+<section class="contacto">
+  <h2>Contáctanos</h2>
+  <p><strong>Teléfono:</strong> 513-620-7030</p>
+  <p><strong>WhatsApp:</strong> 513-429-0401</p>
+  <p><strong>Correo:</strong> <a href="mailto:prpconstruction@gmail.com">prpconstruction@gmail.com</a></p>
+  <p><strong>Dirección:</strong> 4627 Carlynn Drive, Cincinnati, Ohio 45241</p>
+  <p><strong>Facebook:</strong> <a href="https://www.facebook.com/PRPConstructionLLC" target="_blank">PRP Construction LLC</a></p>
+</section>
+
+<a href="https://wa.me/15134290401" class="whatsapp-float" target="_blank" title="Envíanos un WhatsApp">📱</a>
+
+<footer>
+  <p>&copy; 2025 PRP Construction, Inc. Todos los derechos reservados.</p>
+</footer>
 
 </body>
 </html>
